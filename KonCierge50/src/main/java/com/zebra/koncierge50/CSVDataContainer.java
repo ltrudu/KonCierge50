@@ -1,4 +1,4 @@
-package com.example.koncierge50;
+package com.zebra.koncierge50;
 
 import android.util.ArrayMap;
 import android.util.Log;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.example.koncierge50.StringHelpers.capitalizeFirstLetters;
+import static com.zebra.koncierge50.StringHelpers.capitalizeFirstLetters;
 
 public class CSVDataContainer {
 

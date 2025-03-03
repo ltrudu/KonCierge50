@@ -1,4 +1,4 @@
-package com.example.koncierge50;
+package com.zebra.koncierge50;
 
 public class Constants {
     public static final String CONFIG_FILENAME = "config.json";

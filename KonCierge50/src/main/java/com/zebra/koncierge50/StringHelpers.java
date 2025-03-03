@@ -1,4 +1,4 @@
-package com.example.koncierge50;
+package com.zebra.koncierge50;
 
 public class StringHelpers {
     public static String capitalizeFirstLetters(String name)

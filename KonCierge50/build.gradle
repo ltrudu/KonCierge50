@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.koncierge50'
+    namespace 'com.zebra.koncierge50'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.koncierge50"
+        applicationId "com.zebra.koncierge50"
         minSdk 30
         targetSdk 34
         versionCode 4

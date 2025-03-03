@@ -1,4 +1,4 @@
-package com.example.koncierge50;
+package com.zebra.koncierge50;
 
 import com.google.gson.Gson;
 
