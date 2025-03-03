@@ -1,0 +1,58 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.example.koncierge50'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.koncierge50"
+        minSdk 30
+        targetSdk 34
+        versionCode 4
+        versionName "1.4"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation files('..\\libs\\ZSDK_CARD_ANDROID_API.jar')
+    implementation files('..\\libs\\ZSDK_ANDROID_API.jar')
+    implementation files('..\\libs\\bcprov-jdk15on-1.48.jar')
+    implementation files('..\\libs\\commons-codec-1.8.jar')
+    implementation files('..\\libs\\commons-io-2.2.jar')
+    implementation files('..\\libs\\commons-lang3-3.4.jar')
+    implementation files('..\\libs\\core-3.3.1.jar')
+    implementation files('..\\libs\\dom4j-1.6.1.jar')
+    implementation files('..\\libs\\jackson-annotations-2.2.3.jar')
+    implementation files('..\\libs\\jackson-core-2.2.3.jar')
+    implementation files('..\\libs\\jackson-databind-2.2.3.jar')
+    implementation files('..\\libs\\jaxen-1.1-beta-6.jar')
+    implementation files('..\\libs\\simple-xml-2.7.1.jar')
+    implementation files('..\\libs\\snmp4j-2.3.0.jar')
+    implementation files('..\\libs\\snmp6_1z.jar')
+    implementation files('..\\libs\\ZSDK_CARD_ANDROID_API.jar')
+    implementation libs.criticalpermissionhelper
+    implementation libs.gson
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}

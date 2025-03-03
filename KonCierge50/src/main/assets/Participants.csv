@@ -1,0 +1,31 @@
+Prénom;Nom;Société;Email;Mobile;Fonction;VIP
+Marie;Durand;AlphaTech;marie.durand@alphatech.com;0612345678;Directrice Générale;YES
+Jean;Dupont;BetaCorp;jean.dupont@betacorp.net;0623456789;Responsable Marketing;NO
+Sophie;Martin;GammaIndustries;sophie.martin@gammaindustries.org;0634567890;Ingénieure;NO
+Lucas;Lefèvre;DeltaServices;lucas.lefevre@deltaservices.co;0645678901;Consultant;YES
+Emma;Moreau;EpsilonSolutions;emma.moreau@epsilonsolutions.biz;0656789012;Chargée de Communication;NO
+Hugo;Bernard;ZetaTech;hugo.bernard@zetatech.info;0667890123;Développeur;NO
+Chloé;Dubois;EtaInc;chloe.dubois@etainc.us;0678901234;Analyste;YES
+Léa;Lemoine;ThetaEnterprises;lea.lemoine@thetaenterprises.de;0689012345;Cheffe de Projet;NO
+Louis;Perrot;IotaCorp;louis.perrot@iotacorp.uk;0690123456;Technicien;YES
+Lina;Roche;KappaSolutions;lina.roche@kappasolutions.fr;0611234567;Responsable RH;NO
+Eva;Rey;LambdaTech;eva.rey@lambda.tech;0622345678;Développeuse;YES
+Noah;Morel;MuServices;noah.morel@muservices.co;0633456789;Ingénieur Réseaux;NO
+Camille;Fournier;NuIndustries;camille.fournier@nuindustries.org;0644567890;Consultante;YES
+Thomas;Perrin;XiCorp;thomas.perrin@xicorp.biz;0655678901;Responsable Commercial;NO
+Anna;Garcia;OmicronSolutions;anna.garcia@omicronsolutions.info;0666789012;Analyste Financier;YES
+Maxime;Renaud;PiEnterprises;maxime.renaud@pienterprises.de;0677890123;Chargé de Projet;NO
+Sarah;Blanc;RhoTech;sarah.blanc@rhotch.uk;0688901234;Développeuse Full-Stack;YES
+Paul;Lemoine;SigmaCorp;paul.lemoine@sigmacorp.fr;0699012345;Technicien Support;NO
+Juliette;Masson;TauInc;juliette.masson@tauinc.com;0610112345;Directrice Marketing;YES
+Arthur;Lopez;UpsilonServices;arthur.lopez@upsilonservices.net;0621123456;Consultant IT;NO
+Nina;Faure;PhiSolutions;nina.faure@phisolutions.co;0632134567;Ingénieure Logiciel;YES
+Antoine;Giraud;ChiIndustries;antoine.giraud@chiindustries.org;0643145678;Analyste Sécurité;NO
+Alice;Rouge;PsiTech;alice.rouge@psitech.biz;0654156789;Responsable R&D;YES
+Victor;Dupuis;OmegaEnterprises;victor.dupuis@omegaenterprises.info;0665167890;Chef de Projet;NO
+Emma;Vidal;ZetaCorp;emma.vidal@zetacorp.de;0676178901;Responsable Qualité;YES
+Louis;Bonnet;EtaServices;louis.bonnet@etaservices.uk;0687189012;Consultant ERP;NO
+Clara;Fontaine;ThetaSolutions;clara.fontaine@thetasolutions.fr;0698190123;Ingénieure DevOps;YES
+Hugo;Moulin;IotaInc;hugo.moulin@iotainc.com;0611201234;Développeur Back-End;NO
+Manon;Adam;KappaTech;manon.adam@kappatech.net;0622212345;Analyste Données;YES
+Léon;Georges;LambdaSolutions;leon.georges@lambdasolutions.co;0633223456;Responsable Sécurité;NO

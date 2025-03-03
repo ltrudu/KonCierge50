@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KonCierge50</string>
+    <string name="app_title">KC50 Concierge Application</string>
+    <string name="loading_status">Loading Application</string>
+</resources>
