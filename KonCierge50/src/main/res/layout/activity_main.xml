@@ -5,10 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:forceDarkAllowed="true"
-    tools:context=".MainActivity"
+    android:background="@color/black"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:forceDarkAllowed="false"
+    tools:context=".MainActivity">
 
     <AutoCompleteTextView
         android:id="@+id/actTextView"
@@ -17,6 +18,7 @@
         android:ems="10"
         android:hint="Recherche par nom ou prénom"
         android:inputType="text"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -77,8 +79,10 @@
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:hint="Prénom"
+            android:textColorHint="@color/white"
             android:imeOptions="actionNext"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/txtNewNom"
@@ -87,8 +91,10 @@
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:hint="Nom"
+            android:textColorHint="@color/white"
             android:imeOptions="actionNext"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/txtNewSociete"
@@ -97,8 +103,10 @@
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:hint="Societe"
+            android:textColorHint="@color/white"
             android:imeOptions="actionNext"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/txtNewMobile"
@@ -107,8 +115,10 @@
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:hint="Téléphone mobile"
+            android:textColorHint="@color/white"
             android:imeOptions="actionNext"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/txtNewEmail"
@@ -117,8 +127,10 @@
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:hint="Email"
+            android:textColorHint="@color/white"
             android:imeOptions="actionNext"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/txtNewFonction"
@@ -127,8 +139,10 @@
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:hint="Fonction"
+            android:textColorHint="@color/white"
             android:imeOptions="actionNext"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:textColor="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -144,8 +158,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:text="Imprimer"
-                />
+                android:text="Imprimer" />
 
             <Button
                 android:id="@+id/btNewCardFermer"
@@ -188,6 +201,7 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="Bienvenue"
+            android:textColor="@color/white"
             android:textSize="34sp" />
 
         <TextView
@@ -196,6 +210,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Paul Atréide"
+            android:textColor="@color/white"
             android:textSize="48sp" />
 
         <TextView
@@ -204,6 +219,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="de la société"
+            android:textColor="@color/white"
             android:textSize="34sp" />
 
         <TextView
@@ -212,6 +228,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Fremen"
+            android:textColor="@color/white"
             android:textSize="48sp" />
 
         <LinearLayout
