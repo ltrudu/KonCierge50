@@ -450,7 +450,7 @@ public class MainActivity extends AppCompatActivity {
         imageViewLogo.setVisibility(View.VISIBLE);
         read_config();
         // Create helper classes
-        mCardPrintingHelper = new CardPrintingHelper(this, mSetupConfigurationClass.CARD_PRINTER_IP, mSetupConfigurationClass.CARD_PRINTER_PORT);
+        mCardPrintingHelper = new CardPrintingHelper(this, mSetupConfigurationClass);
         mWristbandPrintingHelper = new WristbandPrintingHelper(this,mSetupConfigurationClass.WRISTBAND_PRINTER_IP,mSetupConfigurationClass.WRISTBAND_PRINTER_PORT);
         mCSVDataContainer = new CSVDataContainer();
 

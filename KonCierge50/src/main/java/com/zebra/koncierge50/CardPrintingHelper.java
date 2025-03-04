@@ -35,10 +35,9 @@ public class CardPrintingHelper {
     private final static String TAG = "CardPrint";
 
     private Context mContext;
-    private String mIP;
-    private int mPort;
     private CardPrintingHelperCallback mCallback;
     private CSVDataModel mDataModel;
+    private SetupConfigurationClass mSetupConfiguration;
 
     public interface CardPrintingHelperCallback
     {
@@ -47,11 +46,10 @@ public class CardPrintingHelper {
         void onError(String message);
     }
 
-    public CardPrintingHelper(Context context, String ip, int port)
+    public CardPrintingHelper(Context context, SetupConfigurationClass setupConfigurationClass)
     {
         mContext = context;
-        mIP = ip;
-        mPort = port;
+        mSetupConfiguration = setupConfigurationClass;
     }
 
     public void print(CSVDataModel dataModel, CardPrintingHelperCallback callback)
@@ -64,8 +62,8 @@ public class CardPrintingHelper {
                 ZebraCardPrinter zebraCardPrinter = null;
 
                 try {
-                    onMessage("Connecting to printer: " + String.valueOf(mIP) + " on port: " + mPort);
-                    connection = new TcpConnection(mIP, mPort);
+                    onMessage("Connecting to printer: " + String.valueOf(mSetupConfiguration.CARD_PRINTER_IP) + " on port: " + mSetupConfiguration.CARD_PRINTER_PORT);
+                    connection = new TcpConnection(mSetupConfiguration.CARD_PRINTER_IP, mSetupConfiguration.CARD_PRINTER_PORT);
                     connection.open();
                     onMessage("Printer connected");
 
@@ -98,7 +96,6 @@ public class CardPrintingHelper {
 
         try {
             graphics = new ZebraCardGraphics(zebraCardPrinter);
-            graphics.initialize(mContext, 0, 0, OrientationType.Portrait, PrintType.MonoK, Color.WHITE);
             graphicsData.add(drawMonoImage(graphics, CardSide.Front));
         }
         catch(Exception e)
@@ -116,21 +113,31 @@ public class CardPrintingHelper {
 
     private GraphicsInfo drawMonoImage(ZebraGraphics graphics, CardSide side) throws IllegalArgumentException, IOException, ZebraCardException {
         try {
-            graphics.initialize(mContext, 0, 0, OrientationType.Landscape, PrintType.MonoK, Color.WHITE);
+            OrientationType cardOrientation = OrientationType.Landscape;
+            switch(mSetupConfiguration.CARD_ORIENTATION)
+            {
+                case "Landscape":
+                    cardOrientation = OrientationType.Landscape;
+                    break;
+                default:
+                    cardOrientation = OrientationType.Portrait;
+                    break;
+            }
+            graphics.initialize(mContext, 0, 0, cardOrientation, PrintType.MonoK, Color.WHITE);
 
             // TODO : Rajouter les autres éléments du data model sur la carte
 
             if(mDataModel.Prenom.isEmpty() == false)
-                graphics.drawText(mDataModel.Prenom , 600,0, 620,100, 90, TextAlignment.Center, TextAlignment.Top, 16, Color.BLACK,true);
+                graphics.drawText(mDataModel.Prenom , mSetupConfiguration.PRENOM_CONFIG.x,mSetupConfiguration.PRENOM_CONFIG.y, mSetupConfiguration.PRENOM_CONFIG.width,mSetupConfiguration.PRENOM_CONFIG.height, mSetupConfiguration.PRENOM_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.PRENOM_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.PRENOM_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.PRENOM_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.PRENOM_CONFIG.shrinkToFit);
             if(mDataModel.Nom.isEmpty() == false)
-                graphics.drawText(mDataModel.Nom , 520,0, 620,100, 90, TextAlignment.Center, TextAlignment.Top, 16, Color.BLACK,true);
+                graphics.drawText(mDataModel.Nom , mSetupConfiguration.NOM_CONFIG.x,mSetupConfiguration.NOM_CONFIG.y, mSetupConfiguration.NOM_CONFIG.width,mSetupConfiguration.NOM_CONFIG.height, mSetupConfiguration.NOM_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.NOM_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.NOM_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.NOM_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.NOM_CONFIG.shrinkToFit);
             if(mDataModel.Societe.isEmpty() == false)
-                graphics.drawText(mDataModel.Societe, 410,0, 620,80, 90, TextAlignment.Center, TextAlignment.Top, 12, Color.BLACK, true);
+                graphics.drawText(mDataModel.Societe , mSetupConfiguration.SOCIETE_CONFIG.x,mSetupConfiguration.SOCIETE_CONFIG.y, mSetupConfiguration.SOCIETE_CONFIG.width,mSetupConfiguration.SOCIETE_CONFIG.height, mSetupConfiguration.SOCIETE_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.SOCIETE_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.SOCIETE_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.SOCIETE_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.SOCIETE_CONFIG.shrinkToFit);
 
             // Add QR Code
-            if(mDataModel.VCARD != null) {
+            if(mDataModel.VCARD != null && mSetupConfiguration.PRINT_QRCODE) {
                 CodeQRUtil codeQRUtil = ZebraBarcodeFactory.getQRCode(graphics);
-                codeQRUtil.drawBarcode(mDataModel.VCARD, 50, 180, 300, 300, Rotation.ROTATE_90);
+                codeQRUtil.drawBarcode(mDataModel.VCARD, mSetupConfiguration.QRCODE_CONFIG.x, mSetupConfiguration.QRCODE_CONFIG.y, mSetupConfiguration.QRCODE_CONFIG.width, mSetupConfiguration.QRCODE_CONFIG.height, Rotation.fromInteger(mSetupConfiguration.QRCODE_CONFIG.rotation));
             }
 
             ZebraCardImageI zebraCardImage = graphics.createImage();

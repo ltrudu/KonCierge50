@@ -7,15 +7,66 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class SetupConfigurationClass {
+    public class TextDataConfiguration
+    {
+        int x;
+        int y;
+        int width;
+        int height;
+        int rotation;
+        String horizontalAlignment;
+        String verticalAlignment;
+        int fontSize;
+        boolean shrinkToFit = true;
+
+        public TextDataConfiguration(int x, int y, int width, int height, int rotation, String horizontalAlignment, String verticalAlignment, int fontSize, boolean shrinkToFit)
+        {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.rotation = rotation;
+            this.horizontalAlignment = horizontalAlignment;
+            this.verticalAlignment = verticalAlignment;
+            this.fontSize = fontSize;
+            this.shrinkToFit = shrinkToFit;
+        }
+    }
+
+    public class QRCodeConfiguration
+    {
+        int x;
+        int y;
+        int width;
+        int height;
+        int rotation;
+
+        public QRCodeConfiguration(int x, int y, int width, int height, int rotation)
+        {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.rotation = rotation;
+        }
+    }
+
     boolean VIP_MODE = false;
     boolean PRINT_WRISTBAND_FOR_VIP = false;
     int NUMBER_OF_CHARACTERS_BEFORE_SEARCHING_FOR_CANDIDATES = 3;
-    String CARD_PRINTER_IP = "192.168.1.102";
+    String CARD_PRINTER_IP = "192.168.0.170";
     int CARD_PRINTER_PORT = 9100;
     String WRISTBAND_PRINTER_IP = "192.168.0.133";
     int WRISTBAND_PRINTER_PORT = 9100;
     boolean CAN_CREATE_CARD = true;
-    boolean CAN_CREATE_VCARD = true;
+    boolean CAN_CREATE_VCARD = false;
+    String CARD_ORIENTATION = "Landscape";
+    TextDataConfiguration PRENOM_CONFIG = new TextDataConfiguration(600,0, 620,100, 90, "Center", "Top", 16, true);
+    TextDataConfiguration NOM_CONFIG = new TextDataConfiguration(520,0, 620,100, 90, "Center", "Top", 16, true);
+    TextDataConfiguration SOCIETE_CONFIG = new TextDataConfiguration(410,0, 620,80, 90, "Center", "Top", 12, true);
+    boolean PRINT_QRCODE = true;
+    QRCodeConfiguration QRCODE_CONFIG = new QRCodeConfiguration(50, 180, 300, 300, 90);
+
 
     // Serialize the object to a JSON file
     public void saveToFile(String filePath) throws IOException {
