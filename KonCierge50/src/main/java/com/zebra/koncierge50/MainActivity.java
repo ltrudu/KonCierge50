@@ -405,7 +405,6 @@ public class MainActivity extends AppCompatActivity {
                 if(mSetupConfigurationClass.ENABLE_SEARCH_MODE)
                     actTextView.setVisibility(View.INVISIBLE);
                 btCreateManually.setVisibility(View.INVISIBLE);
-                txtNewPrenom.requestFocus();
                 animateView(llNewCard, 0, 0, -llNewCard.getWidth() - 200, 0, false);
             }
         });
@@ -767,10 +766,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onAnimationRepeat(Animation animation) {}
                 });
-                view.startAnimation(animation);
                 if (!hide) {
                     view.setVisibility(View.VISIBLE);
                 }
+                view.startAnimation(animation);
             }
 
     public void startStarAnimation() {
