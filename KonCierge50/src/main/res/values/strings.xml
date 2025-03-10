@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">KonCierge50</string>
     <string name="app_title">KC50 Concierge Application</string>
-    <string name="loading_status">Loading Application</string>
+    <string name="loading_status">Loading</string>
+    <string name="search_by_name">Find by name</string>
+    <string name="register_manually">Enter information manually</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="company">Company</string>
+    <string name="mobile_phone">Mobile Phone</string>
+    <string name="mail">Email</string>
+    <string name="function">Function</string>
+    <string name="print">Print</string>
+    <string name="close">Close</string>
+    <string name="welcome">Welcome</string>
+    <string name="from_company">from company</string>
+    <string name="cancel">Cancel</string>
 </resources>

@@ -2,6 +2,7 @@ package com.zebra.koncierge50;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.util.Log;
 
 import com.zebra.sdk.comm.Connection;
@@ -20,11 +21,11 @@ import com.zebra.sdk.common.card.graphics.ZebraGraphics;
 import com.zebra.sdk.common.card.graphics.barcode.CodeQRUtil;
 import com.zebra.sdk.common.card.graphics.barcode.ZebraBarcodeFactory;
 import com.zebra.sdk.common.card.graphics.barcode.enumerations.Rotation;
-import com.zebra.sdk.common.card.graphics.enumerations.TextAlignment;
 import com.zebra.sdk.common.card.printer.ZebraCardPrinter;
 import com.zebra.sdk.common.card.printer.ZebraCardPrinterFactory;
 import com.zebra.sdk.device.ZebraIllegalArgumentException;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,7 @@ public class CardPrintingHelper {
     private CardPrintingHelperCallback mCallback;
     private CSVDataModel mDataModel;
     private SetupConfigurationClass mSetupConfiguration;
+    private Typeface customFont = null;
 
     public interface CardPrintingHelperCallback
     {
@@ -126,13 +128,21 @@ public class CardPrintingHelper {
             graphics.initialize(mContext, 0, 0, cardOrientation, PrintType.MonoK, Color.WHITE);
 
             // TODO : Rajouter les autres éléments du data model sur la carte
-
+            if(mSetupConfiguration.USE_CUSTOM_FONT == true)
+            {
+                if(customFont == null)
+                    customFont = getCustomFont();
+                if(customFont != null)
+                    graphics.setFont(customFont);
+            }
             if(mDataModel.Prenom.isEmpty() == false)
-                graphics.drawText(mDataModel.Prenom , mSetupConfiguration.PRENOM_CONFIG.x,mSetupConfiguration.PRENOM_CONFIG.y, mSetupConfiguration.PRENOM_CONFIG.width,mSetupConfiguration.PRENOM_CONFIG.height, mSetupConfiguration.PRENOM_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.PRENOM_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.PRENOM_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.PRENOM_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.PRENOM_CONFIG.shrinkToFit);
+                graphics.drawText(mDataModel.Prenom , mSetupConfiguration.FIRST_NAME_CONFIG.x,mSetupConfiguration.FIRST_NAME_CONFIG.y, mSetupConfiguration.FIRST_NAME_CONFIG.width,mSetupConfiguration.FIRST_NAME_CONFIG.height, mSetupConfiguration.FIRST_NAME_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.FIRST_NAME_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.FIRST_NAME_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.FIRST_NAME_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.FIRST_NAME_CONFIG.shrinkToFit);
             if(mDataModel.Nom.isEmpty() == false)
-                graphics.drawText(mDataModel.Nom , mSetupConfiguration.NOM_CONFIG.x,mSetupConfiguration.NOM_CONFIG.y, mSetupConfiguration.NOM_CONFIG.width,mSetupConfiguration.NOM_CONFIG.height, mSetupConfiguration.NOM_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.NOM_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.NOM_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.NOM_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.NOM_CONFIG.shrinkToFit);
-            if(mDataModel.Societe.isEmpty() == false)
-                graphics.drawText(mDataModel.Societe , mSetupConfiguration.SOCIETE_CONFIG.x,mSetupConfiguration.SOCIETE_CONFIG.y, mSetupConfiguration.SOCIETE_CONFIG.width,mSetupConfiguration.SOCIETE_CONFIG.height, mSetupConfiguration.SOCIETE_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.SOCIETE_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.SOCIETE_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.SOCIETE_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.SOCIETE_CONFIG.shrinkToFit);
+                graphics.drawText(mDataModel.Nom , mSetupConfiguration.LAST_NAME_CONFIG.x,mSetupConfiguration.LAST_NAME_CONFIG.y, mSetupConfiguration.LAST_NAME_CONFIG.width,mSetupConfiguration.LAST_NAME_CONFIG.height, mSetupConfiguration.LAST_NAME_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.LAST_NAME_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.LAST_NAME_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.LAST_NAME_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.LAST_NAME_CONFIG.shrinkToFit);
+            if(mDataModel.Societe.isEmpty() == false && mSetupConfiguration.PRINT_COMPANY)
+                graphics.drawText(mDataModel.Societe , mSetupConfiguration.COMPANY_CONFIG.x,mSetupConfiguration.COMPANY_CONFIG.y, mSetupConfiguration.COMPANY_CONFIG.width,mSetupConfiguration.COMPANY_CONFIG.height, mSetupConfiguration.COMPANY_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.COMPANY_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.COMPANY_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.COMPANY_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.COMPANY_CONFIG.shrinkToFit);
+            if(mDataModel.Fonction.isEmpty() == false && mSetupConfiguration.PRINT_FUNCTION)
+                graphics.drawText(mDataModel.Fonction , mSetupConfiguration.FUNCTION_CONFIG.x,mSetupConfiguration.FUNCTION_CONFIG.y, mSetupConfiguration.FUNCTION_CONFIG.width,mSetupConfiguration.FUNCTION_CONFIG.height, mSetupConfiguration.FUNCTION_CONFIG.rotation, ETextAlignmentString.fromString(mSetupConfiguration.FUNCTION_CONFIG.horizontalAlignment).toTextAlignment(), ETextAlignmentString.fromString(mSetupConfiguration.FUNCTION_CONFIG.verticalAlignment).toTextAlignment(), mSetupConfiguration.FUNCTION_CONFIG.fontSize, Color.BLACK,mSetupConfiguration.FUNCTION_CONFIG.shrinkToFit);
 
             // Add QR Code
             if(mDataModel.VCARD != null && mSetupConfiguration.PRINT_QRCODE) {
@@ -216,6 +226,35 @@ public class CardPrintingHelper {
         } while (true);
 
         return jobStatusInfo;
+    }
+
+    private Typeface getCustomFont()
+    {
+        Typeface returnFont = null;
+        File demoDataFolderFile = new File(Constants.DEMO_DATA_FOLDER);
+        if(demoDataFolderFile.exists() == false)
+        {
+            // The data folder does not exists
+            // This may be the first time the app is launched
+            // or it is launched in demo mode
+            // lets create the folder structure
+            demoDataFolderFile.mkdirs();
+        }
+
+        File fontFile = new File(demoDataFolderFile, Constants.FONT_FILE_NAME);
+        if(fontFile.exists() == false)
+        {
+            // We do not have font file in the persist folder
+            // Let's copy a font file from asset folder
+            try {
+                FileUtils.copyAssetToFolder(mContext, Constants.FONT_FILE_NAME, Constants.CSV_FILENAME, Constants.DEMO_DATA_FOLDER);
+            } catch (Exception e) {
+                Log.e(TAG, e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        returnFont = Typeface.createFromFile(fontFile);
+        return returnFont;
     }
 
     private void onMessage(final String message) {

@@ -61,12 +61,15 @@ public class SetupConfigurationClass {
     boolean CAN_CREATE_CARD = true;
     boolean CAN_CREATE_VCARD = false;
     String CARD_ORIENTATION = "Landscape";
-    TextDataConfiguration PRENOM_CONFIG = new TextDataConfiguration(600,0, 620,100, 90, "Center", "Top", 16, true);
-    TextDataConfiguration NOM_CONFIG = new TextDataConfiguration(520,0, 620,100, 90, "Center", "Top", 16, true);
-    TextDataConfiguration SOCIETE_CONFIG = new TextDataConfiguration(410,0, 620,80, 90, "Center", "Top", 12, true);
+    TextDataConfiguration  FIRST_NAME_CONFIG = new TextDataConfiguration(600,0, 620,100, 90, "Center", "Top", 16, true);
+    TextDataConfiguration LAST_NAME_CONFIG = new TextDataConfiguration(520,0, 620,100, 90, "Center", "Top", 16, true);
+    TextDataConfiguration COMPANY_CONFIG = new TextDataConfiguration(410,0, 620,80, 90, "Center", "Top", 12, true);
+    TextDataConfiguration FUNCTION_CONFIG = new TextDataConfiguration(330,0, 620,80, 90, "Center", "Top", 12, true);
     boolean PRINT_QRCODE = true;
     QRCodeConfiguration QRCODE_CONFIG = new QRCodeConfiguration(50, 180, 300, 300, 90);
-
+    boolean PRINT_COMPANY = true;
+    boolean PRINT_FUNCTION = false;
+    boolean USE_CUSTOM_FONT = false;
 
     // Serialize the object to a JSON file
     public void saveToFile(String filePath) throws IOException {

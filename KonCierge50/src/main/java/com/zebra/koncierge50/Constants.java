@@ -6,4 +6,5 @@ public class Constants {
     public static final String LOGO_FILENAME = "logo.png";
     public static final String DEMO_DATA_FOLDER = "/sdcard/KonCierge50/";
     public static final String KC50_BUILD_MODEL = "kc50";
+    public static final String FONT_FILE_NAME = "font.ttf";
 }
