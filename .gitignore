@@ -32,3 +32,4 @@ google-services.json
 # Android Profiling
 *.hprof
 KonCierge50/release/
+KonCierge50/debug/
