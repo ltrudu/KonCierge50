@@ -345,7 +345,8 @@ public class MainActivity extends AppCompatActivity {
                 stopLEDColorAnimation();
                 updateInfoCard();
                 hideLogos();
-                actTextView.setVisibility(View.INVISIBLE);
+                if(mSetupConfigurationClass.ENABLE_SEARCH_MODE)
+                    actTextView.setVisibility(View.INVISIBLE);
                 btCreateManually.setVisibility(View.INVISIBLE);
                 hideKeyboard();
                 animateView(llPeopleCard, 0, 0, -llPeopleCard.getWidth() - 200, 0, false);
@@ -362,9 +363,11 @@ public class MainActivity extends AppCompatActivity {
                 stopStarAnimation();
                 showLogos();
                 animateView(llPeopleCard, 0, 0, 0, llPeopleCard.getWidth() + 200, true);
-                actTextView.setText("");
-                actTextView.setVisibility(View.VISIBLE);
-                actTextView.requestFocus();
+                if(mSetupConfigurationClass.ENABLE_SEARCH_MODE) {
+                    actTextView.setText("");
+                    actTextView.setVisibility(View.VISIBLE);
+                    actTextView.requestFocus();
+                }
                 btCreateManually.setVisibility(mSetupConfigurationClass.CAN_CREATE_CARD ? View.VISIBLE : View.GONE);
                 startLEDColorAnimation();
             }
@@ -399,7 +402,8 @@ public class MainActivity extends AppCompatActivity {
                     txtNewMobile.setVisibility(View.GONE);
                     txtNewFonction.setVisibility(View.GONE);
                 }
-                actTextView.setVisibility(View.INVISIBLE);
+                if(mSetupConfigurationClass.ENABLE_SEARCH_MODE)
+                    actTextView.setVisibility(View.INVISIBLE);
                 btCreateManually.setVisibility(View.INVISIBLE);
                 txtNewPrenom.requestFocus();
                 animateView(llNewCard, 0, 0, -llNewCard.getWidth() - 200, 0, false);
@@ -415,9 +419,11 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 showLogos();
                 animateView(llNewCard, 0, 0, 0, llNewCard.getWidth() + 200, true);
-                actTextView.setText("");
-                actTextView.setVisibility(View.VISIBLE);
-                actTextView.requestFocus();
+                if(mSetupConfigurationClass.ENABLE_SEARCH_MODE) {
+                    actTextView.setText("");
+                    actTextView.setVisibility(View.VISIBLE);
+                    actTextView.requestFocus();
+                }
                 btCreateManually.setVisibility(mSetupConfigurationClass.CAN_CREATE_CARD ? View.VISIBLE : View.INVISIBLE);
                 startLEDColorAnimation();
             }
@@ -449,6 +455,9 @@ public class MainActivity extends AppCompatActivity {
         load_logo();
         imageViewLogo.setVisibility(View.VISIBLE);
         read_config();
+        if(mSetupConfigurationClass.ENABLE_SEARCH_MODE == false)
+            actTextView.setVisibility(TextView.GONE);
+
         // Create helper classes
         mCardPrintingHelper = new CardPrintingHelper(this, mSetupConfigurationClass);
         mWristbandPrintingHelper = new WristbandPrintingHelper(this,mSetupConfigurationClass.WRISTBAND_PRINTER_IP,mSetupConfigurationClass.WRISTBAND_PRINTER_PORT);

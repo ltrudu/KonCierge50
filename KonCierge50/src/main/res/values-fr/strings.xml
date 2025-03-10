@@ -3,7 +3,7 @@
     <string name="app_title">KC50 Concierge Application</string>
     <string name="loading_status">Chargement</string>
     <string name="search_by_name">Recherche par nom ou prénom</string>
-    <string name="register_manually">Entrer les données manuellement</string>
+    <string name="register_manually">Enregistrez vous</string>
     <string name="first_name">Prénom</string>
     <string name="last_name">Nom</string>
     <string name="company">Société</string>

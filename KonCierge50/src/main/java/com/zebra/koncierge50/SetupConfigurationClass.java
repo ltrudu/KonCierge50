@@ -51,6 +51,7 @@ public class SetupConfigurationClass {
         }
     }
 
+    boolean ENABLE_SEARCH_MODE = true;
     boolean VIP_MODE = false;
     boolean PRINT_WRISTBAND_FOR_VIP = false;
     int NUMBER_OF_CHARACTERS_BEFORE_SEARCHING_FOR_CANDIDATES = 3;
