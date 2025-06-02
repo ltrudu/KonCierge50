@@ -459,6 +459,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Create helper classes
         mCardPrintingHelper = new CardPrintingHelper(this, mSetupConfigurationClass);
+        // Force copying assets font to Koncierge50 for later upgrade
+        mCardPrintingHelper.getCustomFont();
         mWristbandPrintingHelper = new WristbandPrintingHelper(this,mSetupConfigurationClass.WRISTBAND_PRINTER_IP,mSetupConfigurationClass.WRISTBAND_PRINTER_PORT);
         mCSVDataContainer = new CSVDataContainer();
 
@@ -696,7 +698,7 @@ public class MainActivity extends AppCompatActivity {
             // We do not have data in the persist folder
             // Let's copy a demo file from asset folder
             try {
-                FileUtils.copyAssetToFolder(this, "Participants.csv", Constants.CSV_FILENAME, Constants.DEMO_DATA_FOLDER);
+                FileUtils.copyAssetToFolder(this, "Attendees.csv", Constants.CSV_FILENAME, Constants.DEMO_DATA_FOLDER);
             } catch (IOException e) {
                 Log.e(TAG, e.getMessage());
                 e.printStackTrace();

@@ -228,7 +228,7 @@ public class CardPrintingHelper {
         return jobStatusInfo;
     }
 
-    private Typeface getCustomFont()
+    public Typeface getCustomFont()
     {
         Typeface returnFont = null;
         File demoDataFolderFile = new File(Constants.DEMO_DATA_FOLDER);
@@ -247,7 +247,7 @@ public class CardPrintingHelper {
             // We do not have font file in the persist folder
             // Let's copy a font file from asset folder
             try {
-                FileUtils.copyAssetToFolder(mContext, Constants.FONT_FILE_NAME, Constants.CSV_FILENAME, Constants.DEMO_DATA_FOLDER);
+                FileUtils.copyAssetToFolder(mContext, Constants.FONT_FILE_NAME, Constants.FONT_FILE_NAME, Constants.DEMO_DATA_FOLDER);
             } catch (Exception e) {
                 Log.e(TAG, e.getMessage());
                 e.printStackTrace();

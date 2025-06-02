@@ -1,0 +1,49 @@
+FirstName;LastName;Company;Email;Mobile;Role;VIP
+Alice;Johnson;TechCorp;alice.johnson@techcorp.com;0612345678;Software Engineer;YES
+Bob;Smith;Innovate Ltd;bob.smith@innovateltd.com;0698765432;Project Manager;NO
+Charlie;Brown;DataX;charlie.brown@datax.com;0611223344;Data Analyst;YES
+David;Lee;Visionary Inc;david.lee@visionaryinc.com;0655443322;Marketing Director;NO
+Emma;White;CloudWorks;emma.white@cloudworks.com;0688776655;HR Manager;YES
+Frank;Harris;NextGen;frank.harris@nextgen.com;0610456789;Product Designer;NO
+Grace;Martinez;WebWorks;grace.martinez@webworks.com;0677233445;Software Architect;YES
+Henry;Adams;CyberNet;henry.adams@cybernet.com;0644332211;Security Analyst;NO
+Isabelle;Murray;DataPoint;isabelle.murray@datapoint.com;0619384756;Database Administrator;YES
+Jack;Robinson;Visionary Inc;jack.robinson@visionaryinc.com;0638492751;Business Analyst;NO
+Kate;Walker;GreenTech;kate.walker@greentech.com;0665112398;Environmental Consultant;YES
+Leo;Turner;BrightSolutions;leo.turner@brightsolutions.com;0618273645;IT Support Specialist;NO
+Mia;Nelson;CloudWorks;mia.nelson@cloudworks.com;0623456789;HR Coordinator;YES
+Nate;Fisher;TechNova;nate.fisher@technova.com;0698271453;Software Developer;NO
+Olivia;Cooper;NextGen;olivia.cooper@nextgen.com;0618273649;UX Designer;YES
+Paul;Green;Innovate Ltd;paul.green@innovateltd.com;0682345671;Operations Manager;NO
+Quinn;Bailey;CyberNet;quinn.bailey@cybernet.com;0621345678;Cybersecurity Engineer;YES
+Rachel;Bennett;WebWorks;rachel.bennett@webworks.com;0658213674;Frontend Developer;NO
+Sam;Howard;DataPoint;sam.howard@datapoint.com;0618273495;Data Engineer;YES
+Tina;Young;BrightSolutions;tina.young@brightsolutions.com;0682345697;Marketing Specialist;NO
+Umar;Scott;NextGen;umar.scott@nextgen.com;0634875129;Product Manager;YES
+Vera;Parker;CyberNet;vera.parker@cybernet.com;0619374528;Network Engineer;NO
+Will;Evans;TechCorp;will.evans@techcorp.com;0655234718;Software Tester;YES
+Xena;Garcia;Innovate Ltd;xena.garcia@innovateltd.com;0678452317;UX Researcher;NO
+Yusuf;Mills;Visionary Inc;yusuf.mills@visionaryinc.com;0692143578;Business Strategist;YES
+Zoe;Anderson;GreenTech;zoe.anderson@greentech.com;0622334455;Environmental Analyst;NO
+Aiden;Carter;DataX;aiden.carter@datax.com;0619234875;Machine Learning Engineer;YES
+Bella;Foster;WebWorks;bella.foster@webworks.com;0681345279;Graphic Designer;NO
+Caleb;Ross;BrightSolutions;caleb.ross@brightsolutions.com;0642183576;Sales Representative;YES
+Daniel;Woods;CloudWorks;daniel.woods@cloudworks.com;0637459128;Recruitment Specialist;NO
+Elena;Hayes;TechNova;elena.hayes@technova.com;0665124783;Backend Developer;YES
+Finn;Baldwin;Visionary Inc;finn.baldwin@visionaryinc.com;0612389475;Digital Marketing Analyst;NO
+Gabriella;Price;Innovate Ltd;gabriella.price@innovateltd.com;0628174359;HR Business Partner;YES
+Harrison;Stone;DataPoint;harrison.stone@datapoint.com;0689234175;Software Engineer;NO
+Ivy;Reed;GreenTech;ivy.reed@greentech.com;0619345782;Sustainability Consultant;YES
+James;Ellis;CyberNet;james.ellis@cybernet.com;0658124397;System Administrator;NO
+Kylie;Newton;NextGen;kylie.newton@nextgen.com;0621347895;Product Owner;YES
+Liam;Harper;BrightSolutions;liam.harper@brightsolutions.com;0698234517;Sales Manager;NO
+Madison;Ward;TechCorp;madison.ward@techcorp.com;0645378219;UI Designer;YES
+Noah;Cunningham;DataX;noah.cunningham@datax.com;0612457389;Data Scientist;NO
+Olive;Gibson;WebWorks;olive.gibson@webworks.com;0665123897;Customer Success Manager;YES
+Peter;Lane;CyberNet;peter.lane@cybernet.com;0623417896;Penetration Tester;NO
+Quincy;Morgan;Visionary Inc;quincy.morgan@visionaryinc.com;0682134795;Marketing Associate;YES
+Riley;Stewart;Innovate Ltd;riley.stewart@innovateltd.com;0619234758;Operations Coordinator;NO
+Sophia;Phillips;GreenTech;sophia.phillips@greentech.com;0645138279;Environmental Researcher;YES
+Thomas;Campbell;DataPoint;thomas.campbell@datapoint.com;0637491258;Machine Learning Specialist;NO
+Uma;Rivers;NextGen;uma.rivers@nextgen.com;0698274351;Product Engineer;YES
+Victor;Dean;BrightSolutions;victor.dean@brightsolutions.com;0621348759;Business Consultant;NO

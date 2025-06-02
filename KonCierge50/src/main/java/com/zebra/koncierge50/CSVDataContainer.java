@@ -89,18 +89,18 @@ public class CSVDataContainer {
                     String[] values = line.split(";");
                         CSVDataModel model = new CSVDataModel();
                         try {
-                            if (titlesIndexes.containsKey("Prénom") && titlesIndexes.get("Prénom") != -1)
-                                model.Prenom = values[titlesIndexes.get("Prénom")];
-                            if (titlesIndexes.containsKey("Nom") && titlesIndexes.get("Nom") != -1)
-                                model.Nom = values[titlesIndexes.get("Nom")];
-                            if (titlesIndexes.containsKey("Société") && titlesIndexes.get("Société") != -1)
-                                model.Societe = values[titlesIndexes.get("Société")];
+                            if (titlesIndexes.containsKey("FirstName") && titlesIndexes.get("FirstName") != -1)
+                                model.Prenom = values[titlesIndexes.get("FirstName")];
+                            if (titlesIndexes.containsKey("LastName") && titlesIndexes.get("LastName") != -1)
+                                model.Nom = values[titlesIndexes.get("LastName")];
+                            if (titlesIndexes.containsKey("Company") && titlesIndexes.get("Company") != -1)
+                                model.Societe = values[titlesIndexes.get("Company")];
                             if (titlesIndexes.containsKey("Email") && titlesIndexes.get("Email") != -1)
                                 model.Email = values[titlesIndexes.get("Email")];
                             if (titlesIndexes.containsKey("Mobile") && titlesIndexes.get("Mobile") != -1)
                                 model.Mobile = values[titlesIndexes.get("Mobile")];
-                            if (titlesIndexes.containsKey("Fonction") && titlesIndexes.get("Fonction") != -1)
-                                model.Fonction = values[titlesIndexes.get("Fonction")];
+                            if (titlesIndexes.containsKey("Role") && titlesIndexes.get("Role") != -1)
+                                model.Fonction = values[titlesIndexes.get("Role")];
                             if (titlesIndexes.containsKey("VIP") && titlesIndexes.get("VIP") != -1)
                                 model.VIP = (values[titlesIndexes.get("VIP")].equalsIgnoreCase("yes")) ? true : false;
                             model._AllText = capitalizeFirstLetters(model.Prenom + " " + model.Nom);
