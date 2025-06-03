@@ -13,6 +13,6 @@
 	<string name="print">Stampa</string>
 	<string name="close">Chiudi</string>
 	<string name="welcome">Benvenuto</string>
-	<string name="from_company">dall'azienda</string>
+	<string name="from_company">dall azienda</string>
 	<string name="cancel">Annulla</string>
 </resources>
