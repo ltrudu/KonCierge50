@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">KonCierge50</string>
+	<string name="app_title">تطبيق KC50 كونسييرج</string>
+	<string name="loading_status">جارٍ التحميل</string>
+	<string name="search_by_name">البحث بالاسم</string>
+	<string name="register_manually">تسجيل</string>
+	<string name="first_name">الاسم الأول</string>
+	<string name="last_name">اسم العائلة</string>
+	<string name="company">الشركة</string>
+	<string name="mobile_phone">رقم الهاتف المحمول</string>
+	<string name="mail">البريد الإلكتروني</string>
+	<string name="function">الوظيفة</string>
+	<string name="print">طباعة</string>
+	<string name="close">إغلاق</string>
+	<string name="welcome">مرحبًا</string>
+	<string name="from_company">من الشركة</string>
+	<string name="cancel">إلغاء</string>
+</resources>

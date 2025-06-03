@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">KonCierge50</string>
+	<string name="app_title">Aplicación KC50 Concierge</string>
+	<string name="loading_status">Cargando</string>
+	<string name="search_by_name">Buscar por nombre</string>
+	<string name="register_manually">Registrar</string>
+	<string name="first_name">Nombre</string>
+	<string name="last_name">Apellido</string>
+	<string name="company">Empresa</string>
+	<string name="mobile_phone">Teléfono móvil</string>
+	<string name="mail">Correo electrónico</string>
+	<string name="function">Función</string>
+	<string name="print">Imprimir</string>
+	<string name="close">Cerrar</string>
+	<string name="welcome">Bienvenido</string>
+	<string name="from_company">de la empresa</string>
+	<string name="cancel">Cancelar</string>
+</resources>

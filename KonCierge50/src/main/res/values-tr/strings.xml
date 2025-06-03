@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">KonCierge50</string>
+	<string name="app_title">KC50 Concierge Uygulaması</string>
+	<string name="loading_status">Yükleniyor</string>
+	<string name="search_by_name">İsme göre bul</string>
+	<string name="register_manually">Kaydol</string>
+	<string name="first_name">Ad</string>
+	<string name="last_name">Soyad</string>
+	<string name="company">Şirket</string>
+	<string name="mobile_phone">Cep Telefonu</string>
+	<string name="mail">E-posta</string>
+	<string name="function">Görev</string>
+	<string name="print">Yazdır</string>
+	<string name="close">Kapat</string>
+	<string name="welcome">Hoş geldiniz</string>
+	<string name="from_company">şirketten</string>
+	<string name="cancel">İptal</string>
+</resources>
