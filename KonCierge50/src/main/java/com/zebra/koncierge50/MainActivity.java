@@ -44,6 +44,7 @@ import androidx.core.view.WindowInsetsControllerCompat;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -159,6 +160,19 @@ public class MainActivity extends AppCompatActivity {
         printButton = findViewById(R.id.btPrint);
         printButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if(mSetupConfigurationClass.EXPORT_ATTENDEE_DATA && mSelectedModel != null)
+                {
+                    Date nowDate = new Date();
+                    try {
+                        ExportDataUtils.appendDataToCSVFile(mSelectedModel, nowDate, false);
+                    }
+                    catch(Exception e)
+                    {
+                        Toast.makeText(getApplicationContext(), MainActivity.this.getString(R.string.error) + ": " +  e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, e.getLocalizedMessage());
+                        e.printStackTrace();
+                    }
+                }
                 print_card();
             }
         });
@@ -194,31 +208,31 @@ public class MainActivity extends AppCompatActivity {
                 if(txtNewPrenom.getText().toString().isEmpty())
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setTitle("Erreur")
-                            .setMessage("Veuillez entrer un prénom.")
-                            .setPositiveButton("Oui", null)
-                            .setNeutralButton("Peut être", null)
-                            .setNegativeButton("Non", null)
+                    builder.setTitle(R.string.error)
+                            .setMessage(R.string.enter_firstname)
+                            .setPositiveButton(R.string.yes, null)
+                            .setNeutralButton(R.string.maybe, null)
+                            .setNegativeButton(R.string.no, null)
                             .show();
                     return;
                 }
                 else if(txtNewNom.getText().toString().isEmpty())
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setTitle("Erreur")
-                            .setMessage("Veuillez entrer un nom.")
-                            .setPositiveButton("Certainement", null)
-                            .setNeutralButton("Avec plaisir", null)
-                            .setNegativeButton("Sans moi", null)
+                    builder.setTitle(R.string.error)
+                            .setMessage(R.string.enter_lastname)
+                            .setPositiveButton(R.string.certainly, null)
+                            .setNeutralButton(R.string.with_pleasure, null)
+                            .setNegativeButton(R.string.without_me, null)
                             .show();
                     return;
                 }
                 else if(txtNewSociete.getText().toString().isEmpty())
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setTitle("Erreur")
-                            .setMessage("Veuillez entrer une société.")
-                            .setPositiveButton("Ouiiiii", null)
+                    builder.setTitle(R.string.error)
+                            .setMessage(R.string.enter_company)
+                            .setPositiveButton(R.string.yes, null)
                             .show();
                     return;
                 }
@@ -232,6 +246,19 @@ public class MainActivity extends AppCompatActivity {
                 mSelectedModel.Fonction = txtNewFonction.getText().toString();
                 mSelectedModel.VIP = false;
                 mSelectedModel.createVCard();
+
+                if(mSetupConfigurationClass.EXPORT_REGISTERED_DATA) {
+                    Date nowDate = new Date();
+                    try {
+                        ExportDataUtils.appendDataToCSVFile(mSelectedModel, nowDate, true);
+                    }
+                    catch(Exception e)
+                    {
+                        Toast.makeText(getApplicationContext(), MainActivity.this.getString(R.string.error) + ": " +  e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                        Log.e(TAG, e.getLocalizedMessage());
+                        e.printStackTrace();
+                    }
+                }
                 print_new_card();
             }
         });
@@ -349,6 +376,7 @@ public class MainActivity extends AppCompatActivity {
                     actTextView.setVisibility(View.INVISIBLE);
                 btCreateManually.setVisibility(View.INVISIBLE);
                 hideKeyboard();
+                printButton.setVisibility(View.VISIBLE);
                 animateView(llPeopleCard, 0, 0, -llPeopleCard.getWidth() - 200, 0, false);
             }
         });
@@ -385,6 +413,7 @@ public class MainActivity extends AppCompatActivity {
                 stopLEDColorAnimation();
                 hideLogos();
                 hideKeyboard();
+                btNewCardPrint.setVisibility(View.VISIBLE);
                 txtNewNom.setText("");
                 txtNewPrenom.setText("");
                 txtNewSociete.setText("");
@@ -597,6 +626,7 @@ public class MainActivity extends AppCompatActivity {
     {
         if(mSelectedModel != null) {
 
+            btNewCardPrint.setVisibility(View.GONE);
             mCardPrintingHelper.print(mSelectedModel, new CardPrintingHelper.CardPrintingHelperCallback() {
                 @Override
                 public void onMessage(String message) {
@@ -606,14 +636,20 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess() {
                     Log.v(TAG, "New Card printed with success.");
-                    hideNewCard();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            hideNewCard();
+                        }
+                    });
+
                 }
 
                 @Override
                 public void onError(String message) {
                     runOnUiThread(new Runnable() {
                         public void run() {
-                            Toast.makeText(getApplicationContext(), "Error: " +  message, Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), MainActivity.this.getString(R.string.error) + ": " +  message, Toast.LENGTH_LONG).show();
                             Log.e(TAG, message);
                         }
                     });
@@ -626,7 +662,7 @@ public class MainActivity extends AppCompatActivity {
     private void print_card()
     {
         if(mSelectedModel != null) {
-            
+            printButton.setVisibility(View.GONE);
             mCardPrintingHelper.print(mSelectedModel, new CardPrintingHelper.CardPrintingHelperCallback() {
                 @Override
                 public void onMessage(String message) {
@@ -648,7 +684,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onError(String message) {
                     runOnUiThread(new Runnable() {
                         public void run() {
-                            Toast.makeText(getApplicationContext(), "Error: " +  message, Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), MainActivity.this.getString(R.string.error) + ": " +  message, Toast.LENGTH_LONG).show();
                             Log.e(TAG, message);
                         }
                     });
@@ -671,7 +707,7 @@ public class MainActivity extends AppCompatActivity {
             public void onError(String message) {
                 runOnUiThread(new Runnable() {
                     public void run() {
-                        Toast.makeText(getApplicationContext(), "Error: " +  message, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), MainActivity.this.getString(R.string.error) + ": " +  message, Toast.LENGTH_LONG).show();
                         Log.e(TAG, message);
                     }
                 });
@@ -762,6 +798,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         if (hide) {
                             view.setVisibility(View.GONE);
+                            view.setActivated(false);
                         }
                     }
 
@@ -770,6 +807,7 @@ public class MainActivity extends AppCompatActivity {
                 });
                 if (!hide) {
                     view.setVisibility(View.VISIBLE);
+                    view.setActivated(true);
                 }
                 view.startAnimation(animation);
             }

@@ -15,4 +15,14 @@
     <string name="welcome">Welcome</string>
     <string name="from_company">from company</string>
     <string name="cancel">Cancel</string>
+    <string name="error">Error</string>
+	<string name="enter_firstname">Please enter a first name.</string>
+	<string name="enter_lastname">Please enter a last name.</string>
+	<string name="enter_company">Please enter a company.</string>
+	<string name="yes">Yes</string>
+	<string name="maybe">Maybe</string>
+	<string name="no">No</string>
+	<string name="certainly">Certainly</string>
+	<string name="with_pleasure">With pleasure</string>
+	<string name="without_me">Without me</string>
 </resources>

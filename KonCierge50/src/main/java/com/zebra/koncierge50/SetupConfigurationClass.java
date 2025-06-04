@@ -53,6 +53,8 @@ public class SetupConfigurationClass {
 
     boolean ENABLE_SEARCH_MODE = true;
     boolean VIP_MODE = false;
+    boolean EXPORT_REGISTERED_DATA = true;
+    boolean EXPORT_ATTENDEE_DATA = true;
     boolean PRINT_WRISTBAND_FOR_VIP = false;
     int NUMBER_OF_CHARACTERS_BEFORE_SEARCHING_FOR_CANDIDATES = 3;
     String CARD_PRINTER_IP = "192.168.0.170";

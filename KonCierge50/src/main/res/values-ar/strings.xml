@@ -15,4 +15,14 @@
 	<string name="welcome">مرحبًا</string>
 	<string name="from_company">من الشركة</string>
 	<string name="cancel">إلغاء</string>
+	<string name="error">خطأ</string>
+	<string name="enter_firstname">يرجى إدخال الاسم الأول.</string>
+	<string name="enter_lastname">يرجى إدخال اسم العائلة.</string>
+	<string name="enter_company">يرجى إدخال اسم الشركة.</string>
+	<string name="yes">نعم</string>
+	<string name="maybe">ربما</string>
+	<string name="no">لا</string>
+	<string name="certainly">بالتأكيد</string>
+	<string name="with_pleasure">بكل سرور</string>
+	<string name="without_me">بدوني</string>
 </resources>

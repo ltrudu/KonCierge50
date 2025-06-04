@@ -15,4 +15,14 @@
 	<string name="welcome">Hoş geldiniz</string>
 	<string name="from_company">şirketten</string>
 	<string name="cancel">İptal</string>
+	<string name="error">Hata</string>
+	<string name="enter_firstname">Lütfen bir ad girin.</string>
+	<string name="enter_lastname">Lütfen bir soyad girin.</string>
+	<string name="enter_company">Lütfen bir şirket girin.</string>
+	<string name="yes">Evet</string>
+	<string name="maybe">Belki</string>
+	<string name="no">Hayır</string>
+	<string name="certainly">Kesinlikle</string>
+	<string name="with_pleasure">Memnuniyetle</string>
+	<string name="without_me">Bensiz</string>
 </resources>

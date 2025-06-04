@@ -15,4 +15,14 @@
 	<string name="welcome">Καλώς ήρθατε</string>
 	<string name="from_company">από εταιρεία</string>
 	<string name="cancel">Ακύρωση</string>
+	<string name="error">Σφάλμα</string>
+	<string name="enter_firstname">Παρακαλώ εισάγετε ένα όνομα.</string>
+	<string name="enter_lastname">Παρακαλώ εισάγετε ένα επώνυμο.</string>
+	<string name="enter_company">Παρακαλώ εισάγετε μια εταιρεία.</string>
+	<string name="yes">Ναι</string>
+	<string name="maybe">Ίσως</string>
+	<string name="no">Όχι</string>
+	<string name="certainly">Σίγουρα</string>
+	<string name="with_pleasure">Με ευχαρίστηση</string>
+	<string name="without_me">Χωρίς εμένα</string>
 </resources>
