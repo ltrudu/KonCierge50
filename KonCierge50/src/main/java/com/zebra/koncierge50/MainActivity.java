@@ -173,7 +173,13 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                print_card();
+                if(mSetupConfigurationClass.DISABLE_CARD_PRINTING)
+                {
+                    hideInfoCard();
+                }
+                else {
+                    print_card();
+                }
             }
         });
 
@@ -259,7 +265,13 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                print_new_card();
+                if(mSetupConfigurationClass.DISABLE_CARD_PRINTING)
+                {
+                    hideNewCard();
+                }
+                else {
+                    print_new_card();
+                }
             }
         });
 
@@ -485,6 +497,12 @@ public class MainActivity extends AppCompatActivity {
         read_config();
         if(mSetupConfigurationClass.ENABLE_SEARCH_MODE == false)
             actTextView.setVisibility(TextView.GONE);
+
+        if(mSetupConfigurationClass.DISABLE_CARD_PRINTING)
+        {
+            printButton.setText(R.string.register);
+            btNewCardPrint.setText(R.string.register);
+        }
 
         // Create helper classes
         mCardPrintingHelper = new CardPrintingHelper(this, mSetupConfigurationClass);

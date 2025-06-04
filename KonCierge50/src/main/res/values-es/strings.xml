@@ -3,7 +3,8 @@
 	<string name="app_title">Aplicación KC50 Concierge</string>
 	<string name="loading_status">Cargando</string>
 	<string name="search_by_name">Buscar por nombre</string>
-	<string name="register_manually">Registrar</string>
+	<string name="new_attendee">Nuevo asistente</string>
+	<string name="register">Registrar</string>
 	<string name="first_name">Nombre</string>
 	<string name="last_name">Apellido</string>
 	<string name="company">Empresa</string>

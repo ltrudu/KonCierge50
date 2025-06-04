@@ -56,6 +56,7 @@ public class SetupConfigurationClass {
     boolean EXPORT_REGISTERED_DATA = true;
     boolean EXPORT_ATTENDEE_DATA = true;
     boolean PRINT_WRISTBAND_FOR_VIP = false;
+    boolean DISABLE_CARD_PRINTING = true;
     int NUMBER_OF_CHARACTERS_BEFORE_SEARCHING_FOR_CANDIDATES = 3;
     String CARD_PRINTER_IP = "192.168.0.170";
     int CARD_PRINTER_PORT = 9100;

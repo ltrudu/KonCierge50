@@ -3,7 +3,8 @@
 	<string name="app_title">تطبيق KC50 كونسييرج</string>
 	<string name="loading_status">جارٍ التحميل</string>
 	<string name="search_by_name">البحث بالاسم</string>
-	<string name="register_manually">تسجيل</string>
+	<string name="new_attendee">مشارك جديد</string>
+	<string name="register">تسجيل</string>
 	<string name="first_name">الاسم الأول</string>
 	<string name="last_name">اسم العائلة</string>
 	<string name="company">الشركة</string>

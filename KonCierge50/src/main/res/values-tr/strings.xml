@@ -3,7 +3,8 @@
 	<string name="app_title">KC50 Concierge Uygulaması</string>
 	<string name="loading_status">Yükleniyor</string>
 	<string name="search_by_name">İsme göre bul</string>
-	<string name="register_manually">Kaydol</string>
+	<string name="new_attendee">Yeni katılımcı</string>
+	<string name="register">Kaydol</string>
 	<string name="first_name">Ad</string>
 	<string name="last_name">Soyad</string>
 	<string name="company">Şirket</string>
