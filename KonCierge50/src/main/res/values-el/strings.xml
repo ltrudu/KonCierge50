@@ -4,6 +4,7 @@
 	<string name="loading_status">Φόρτωση</string>
 	<string name="search_by_name">Αναζήτηση με όνομα</string>
 	<string name="new_attendee">Νέος συμμετέχων</string>
+	<string name="attendee_registered">Έχετε καταχωρηθεί</string>
 	<string name="register">Εγγραφή</string>
 	<string name="first_name">Όνομα</string>
 	<string name="last_name">Επίθετο</string>

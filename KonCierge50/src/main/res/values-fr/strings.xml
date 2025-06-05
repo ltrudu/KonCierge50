@@ -4,6 +4,7 @@
     <string name="loading_status">Chargement</string>
     <string name="search_by_name">Recherche par nom ou prénom</string>
     <string name="new_attendee">Nouveau participant</string>
+    <string name="attendee_registered">Vous avez été enregistré</string>
     <string name="register">Enregistrez vous</string>
     <string name="first_name">Prénom</string>
     <string name="last_name">Nom</string>

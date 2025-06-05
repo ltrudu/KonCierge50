@@ -181,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(mSetupConfigurationClass.DISABLE_CARD_PRINTING)
                 {
+                    Toast.makeText(getApplicationContext(), MainActivity.this.getString(R.string.attendee_registered), Toast.LENGTH_LONG).show();
                     hideInfoCard();
                 }
                 else {
@@ -273,6 +274,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(mSetupConfigurationClass.DISABLE_CARD_PRINTING)
                 {
+                    Toast.makeText(getApplicationContext(), MainActivity.this.getString(R.string.attendee_registered), Toast.LENGTH_LONG).show();
                     hideNewCard();
                 }
                 else {

@@ -4,6 +4,7 @@
 	<string name="loading_status">Yükleniyor</string>
 	<string name="search_by_name">İsme göre bul</string>
 	<string name="new_attendee">Yeni katılımcı</string>
+	<string name="attendee_registered">Kaydınız tamamlandı</string>
 	<string name="register">Kaydol</string>
 	<string name="first_name">Ad</string>
 	<string name="last_name">Soyad</string>

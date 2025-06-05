@@ -4,6 +4,7 @@
     <string name="loading_status">Loading</string>
     <string name="search_by_name">Find by name</string>
     <string name="new_attendee">New attendee</string>
+    <string name="attendee_registered">You\'ve been registered</string>
     <string name="register">Register</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>

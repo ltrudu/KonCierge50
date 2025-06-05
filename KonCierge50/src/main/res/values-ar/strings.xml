@@ -4,6 +4,7 @@
 	<string name="loading_status">جارٍ التحميل</string>
 	<string name="search_by_name">البحث بالاسم</string>
 	<string name="new_attendee">مشارك جديد</string>
+	<string name="attendee_registered">تم تسجيلك</string>
 	<string name="register">تسجيل</string>
 	<string name="first_name">الاسم الأول</string>
 	<string name="last_name">اسم العائلة</string>
