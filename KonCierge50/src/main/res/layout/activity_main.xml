@@ -11,27 +11,6 @@
     android:forceDarkAllowed="false"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageViewLogo"
-        android:layout_width="341dp"
-        android:layout_height="123dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/kc50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewZebra"
-        android:layout_width="79dp"
-        android:layout_height="119dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/zebra" />
-
     <LinearLayout
         android:id="@+id/llNewCard"
         android:layout_width="match_parent"
@@ -236,6 +215,37 @@
 
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageViewProtectionLayer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/black" />
+
+    <ImageView
+        android:id="@+id/imageViewZebra"
+        android:layout_width="79dp"
+        android:layout_height="119dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/zebra" />
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="341dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/kc50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <AutoCompleteTextView
         android:id="@+id/actTextView"

@@ -13,13 +13,11 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowInsets;
 import android.view.animation.Animation;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -73,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtNewMobile;
     private EditText txtNewEmail;
     private EditText txtNewFonction;
+    private ImageView imageViewProtectionLayer;
 
     private CardPrintingHelper mCardPrintingHelper;
 
@@ -137,7 +136,14 @@ public class MainActivity extends AppCompatActivity {
 
         imageViewLogo = findViewById(R.id.imageViewLogo);
         imageViewZebra = findViewById(R.id.imageViewZebra);
-
+        imageViewProtectionLayer = findViewById(R.id.imageViewProtectionLayer);
+        imageViewProtectionLayer.setVisibility(View.VISIBLE);
+        imageViewProtectionLayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "ImageViewProtectionLayer touched.");
+            }
+        });
 
         llNewCard = findViewById(R.id.llNewCard);
         txtNewNom = findViewById(R.id.txtNewNom);
@@ -384,6 +390,7 @@ public class MainActivity extends AppCompatActivity {
                 stopLEDColorAnimation();
                 updateInfoCard();
                 hideLogos();
+                imageViewProtectionLayer.setVisibility(View.GONE);
                 if(mSetupConfigurationClass.ENABLE_SEARCH_MODE)
                     actTextView.setVisibility(View.INVISIBLE);
                 btCreateManually.setVisibility(View.INVISIBLE);
@@ -408,6 +415,7 @@ public class MainActivity extends AppCompatActivity {
                     actTextView.setVisibility(View.VISIBLE);
                     actTextView.requestFocus();
                 }
+                imageViewProtectionLayer.setVisibility(View.VISIBLE);
                 btCreateManually.setVisibility(mSetupConfigurationClass.CAN_CREATE_CARD ? View.VISIBLE : View.GONE);
                 startLEDColorAnimation();
             }
@@ -425,6 +433,7 @@ public class MainActivity extends AppCompatActivity {
                 stopLEDColorAnimation();
                 hideLogos();
                 hideKeyboard();
+                imageViewProtectionLayer.setVisibility(View.GONE);
                 btNewCardPrint.setVisibility(View.VISIBLE);
                 txtNewNom.setText("");
                 txtNewPrenom.setText("");
@@ -464,6 +473,7 @@ public class MainActivity extends AppCompatActivity {
                     actTextView.setVisibility(View.VISIBLE);
                     actTextView.requestFocus();
                 }
+                imageViewProtectionLayer.setVisibility(View.VISIBLE);
                 btCreateManually.setVisibility(mSetupConfigurationClass.CAN_CREATE_CARD ? View.VISIBLE : View.INVISIBLE);
                 startLEDColorAnimation();
             }
